@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:train_project/root/streams/presentation/streams_screen.dart';
+import 'package:train_project/animations/presentation/animations_screen.dart';
+import 'package:train_project/streams/presentation/streams_screen.dart';
 
 class RootScreen extends StatelessWidget {
   const RootScreen({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class RootScreen extends StatelessWidget {
         title: const Text('Доступные разделы'),
       ),
       body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
         children: ListTile.divideTiles(
           context: context,
           tiles: [
@@ -22,6 +24,18 @@ class RootScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (_) {
                       return const StreamsScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+            _ListTile._(
+              text: 'Animations',
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) {
+                      return const AnimationsScreen();
                     },
                   ),
                 );
@@ -47,9 +61,13 @@ class _ListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       onTap: onTap,
       title: Text(text),
-      trailing: const Icon(Icons.arrow_forward_ios_rounded),
+      trailing: const Icon(
+        Icons.arrow_forward_ios_rounded,
+        size: 16,
+      ),
     );
   }
 }
