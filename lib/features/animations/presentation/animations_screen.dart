@@ -1,7 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:train_project/animations/presentation/custom_animation.dart';
+import 'package:train_project/features/animations/presentation/custom_animation.dart';
 
 class AnimationsScreen extends StatefulWidget {
   const AnimationsScreen({Key? key}) : super(key: key);
@@ -56,7 +54,6 @@ class _AnimationsScreenState extends State<AnimationsScreen>
     ).animate(_sizeCurvedAnimation)
       ..addStatusListener((status) {
         setState(() {
-          log('djn bpfdg ${status.name}');
           _sizeAnimationState = status.name;
         });
       });

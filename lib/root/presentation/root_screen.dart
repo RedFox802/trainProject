@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:train_project/animations/presentation/animations_screen.dart';
-import 'package:train_project/streams/presentation/streams_screen.dart';
+import 'package:train_project/features/streams/presentation/streams_screen.dart';
+
+import '../../features/animations/presentation/animations_screen.dart';
+import '../../features/pagination/presentation/pagination_screen.dart';
 
 class RootScreen extends StatelessWidget {
   const RootScreen({Key? key}) : super(key: key);
@@ -36,6 +38,18 @@ class RootScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (_) {
                       return const AnimationsScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+            _ListTile._(
+              text: 'Pagination',
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) {
+                      return const PaginationScreen();
                     },
                   ),
                 );

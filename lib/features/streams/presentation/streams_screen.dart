@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:train_project/streams/domain/streams_service.dart';
+import 'package:train_project/features/streams/domain/streams_service.dart';
 
 class StreamsScreen extends StatefulWidget {
   const StreamsScreen({Key? key}) : super(key: key);
