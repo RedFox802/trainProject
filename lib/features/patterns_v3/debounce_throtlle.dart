@@ -33,7 +33,7 @@ class Throtlle {
 
   //добавляет timeout к действию
   //пока он не закончится, команды больше не проходят
-  static void debounce(
+  static void throtlle(
     String tag,
     VoidCallback onExecute, {
     Duration duration = const Duration(milliseconds: 200),
