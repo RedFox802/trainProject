@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:train_project/features/isolates/isolates_screen.dart';
+import 'package:train_project/features/silvers/silvers_screen.dart';
 import 'package:train_project/features/streams/presentation/streams_screen.dart';
+import 'package:train_project/features/transforms/transforms_screen.dart';
 
 import '../../features/animations/presentation/animations_screen.dart';
 import '../../features/pagination/presentation/pagination_screen.dart';
@@ -50,6 +53,42 @@ class RootScreen extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (_) {
                       return const PaginationScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+            _ListTile._(
+              text: 'Transforms',
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) {
+                      return const TransformsExampleScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+            _ListTile._(
+              text: 'Silvers',
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) {
+                      return const SilversScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+            _ListTile._(
+              text: 'Isolates',
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) {
+                      return const IsolatesScreen();
                     },
                   ),
                 );
